@@ -26,6 +26,7 @@ namespace pocketmine;
 use pocketmine\block\Bed;
 use pocketmine\block\Block;
 use pocketmine\block\BlockFactory;
+use pocketmine\block\Water;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\entity\Effect;
@@ -65,6 +66,7 @@ use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerToggleFlightEvent;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\event\player\PlayerToggleSprintEvent;
+use pocketmine\event\player\PlayerToggleSwimEvent;
 use pocketmine\event\player\PlayerTransferEvent;
 use pocketmine\form\Form;
 use pocketmine\form\FormValidationException;
@@ -3049,6 +3051,7 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 
 		$this->setSprinting(false);
 		$this->setSneaking(false);
+		$this->setSwimming(false);
 
 		$this->extinguish();
 		$this->setAirSupplyTicks($this->getMaxAirSupplyTicks());
